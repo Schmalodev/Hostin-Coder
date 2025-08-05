@@ -42,3 +42,5 @@ package-lock.json
 package.json
 tests/unit/test.py
 tests/unit/test.txt
+test.py
+test.txt
