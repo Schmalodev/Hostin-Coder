@@ -1,4 +1,4 @@
-package main
+package Endpoints
 
 import (
 	"HostingCoder/src/code/FileSaver"
@@ -29,8 +29,8 @@ func codeSaveAndRun(w http.ResponseWriter, r *http.Request) {
 	FileSaver.Save_and_run_file(codeSaver.Code, codeSaver.Language, codeSaver.Data, codeSaver.FileName)
 }
 
-func main() {
+func Main() {
 	http.HandleFunc("/", testEndpoint)
 	http.HandleFunc("/deploy", codeSaveAndRun)
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":8080", nil)
 }
