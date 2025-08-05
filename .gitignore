@@ -40,3 +40,5 @@ build/
 node_modules
 package-lock.json
 package.json
+tests/unit/test.py
+tests/unit/test.txt
