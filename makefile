@@ -3,3 +3,6 @@ make integration-tests:
 
 make unit-tests:
 	go test ./tests/unit
+
+make run:
+	go run src/endpoints/endpoints.go
