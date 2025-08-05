@@ -2,16 +2,31 @@ package main
 
 import (
 	"HostingCoder/src/code"
+	"encoding/json"
 	"fmt"
 	"net/http"
 )
+
+type CodeSaverData struct {
+	Code     string
+	Language string
+	Data     string
+	FileName string
+}
 
 func testEndpoint(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "api: Go")
 }
 
 func codeSaveAndRun(w http.ResponseWriter, r *http.Request) {
-	code.Save_and_run_file("with open('test.txt', 'w') as file: file.write('HelloWorld!')", "python3", "test.py")
+	var codeSaver CodeSaverData
+
+	err := json.NewDecoder(r.Body).Decode(&codeSaver)
+	if err != nil {
+		fmt.Println("ERROR! no response")
+	}
+
+	code.Save_and_run_file(codeSaver.Code, codeSaver.Language, codeSaver.Data, codeSaver.FileName)
 }
 
 func main() {

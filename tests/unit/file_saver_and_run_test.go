@@ -8,7 +8,7 @@ import (
 )
 
 func TestThatCodeIsRunning(t *testing.T) {
-	code.Save_and_run_file("with open('test.txt', 'w') as file: file.write('Hello World!')", "python3", "test.py")
+	code.Save_and_run_file("with open('test.txt', 'w') as file: file.write('Hello World!')", "python3", "test.py", "test.py")
 
 	actuel, err := os.ReadFile("test.txt")
 	exp := "Hello World!"
