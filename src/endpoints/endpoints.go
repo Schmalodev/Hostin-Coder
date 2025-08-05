@@ -16,6 +16,6 @@ func codeSaveAndRun(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", testEndpoint)
-	http.HandleFunc("/test1234!2", codeSaveAndRun)
+	http.HandleFunc("/deploy", codeSaveAndRun)
 	http.ListenAndServe(":8000", nil)
 }
