@@ -17,5 +17,8 @@ jobs:
     - name: unit-tests
       run: make unit-tests
 
+    - name: Docker Build
+      run: make docker
+
     - name: integration-tests
       run: make integration-tests
