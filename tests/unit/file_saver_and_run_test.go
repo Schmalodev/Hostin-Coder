@@ -7,15 +7,6 @@ import (
 	"testing"
 )
 
-func TestDummy(t *testing.T) {
-	result := 2 + 2
-	expected := 4
-
-	if result != expected {
-		t.Errorf("2+2 = %d, erwartet %d", result, expected)
-	}
-}
-
 func TestThatCodeIsRunning(t *testing.T) {
 	code.Save_and_run_file("with open('test.txt', 'w') as file: file.write('Hello World!')", "python3", "test.py")
 
